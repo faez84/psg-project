@@ -14,7 +14,6 @@ class testGame extends TestCase
     public function setUp()
     {
         $this->game = new Game();
-        $this->game->totalGameNumber = 100;
     }
     public function testGetChoice()
     {

@@ -19,8 +19,7 @@ class GameController extends AbstractController
     public function index(Request $request)
     {
         $gmaNumber = intval($request->query->get('gameNumber'));
-        $game = new Game();
-        $game->totalGameNumber = $gmaNumber;
+        $game = new Game($gmaNumber);
         $game->play();
 
         return $this->render('game.html.twig', [

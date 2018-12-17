@@ -12,6 +12,13 @@ class Game
     private $choices = ['paper', 'scissor', 'rock'];
 
     public $result = [0, 0 ,0];
+    public function __construct(int $totalGameNumber = 0)
+    {
+        if ($totalGameNumber > 0 )
+        {
+            $this->totalGameNumber = $totalGameNumber;
+        }
+    }
 
     /**
      * @return string
