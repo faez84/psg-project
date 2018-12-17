@@ -1,0 +1,22 @@
+version: '3'
+services:
+    psrprojapache:
+        build: .docker/apache
+        container_name: psrproj_apache
+        ports:
+          - 8070:80
+        volumes:
+          - .docker/config/vhosts:/etc/apache2/sites-enabled
+          - .:/home/wwwroot/psrproj
+        depends_on:
+          - psrprojphp
+
+    psrprojphp:
+        build: .docker/php
+        container_name: psrproj_php
+        volumes:
+          - .:/home/wwwroot/psrproj
+        ports:
+            - 3322:3306
+
+

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Challenge: Paper-scissor-rock{% endblock %}
+
+{% block body %}
+    {% for key,msg in msgs %}
+        {{ key~msg }}<br/>
+        {% endfor %}
+    <form method="get" action="" clas="page-section-refresh">
+        <input type="text" id="gameNumber" name="gameNumber"/>
+        <button type="submit">Play Again</button>
+    </form>
+{% endblock %}
