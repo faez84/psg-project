@@ -3,16 +3,18 @@
 {% block title %}Challenge: Paper-scissor-rock{% endblock %}
 
 {% block body %}
-    <div>
-    {% for key,msg in msgs %}
-        {{ key~msg }}<br/>
-        {% endfor %}
-    </div>
-    <div class="form-add-game numver-section">
-    <form method="get" action="" clas="page-section-refresh">
-        <label>Please add number of games</label>
-        <input type="text" id="gameNumber" name="gameNumber"/>
-        <button type="submit">Play Again</button>
-    </form>
+    <fieldset>
+        <div>
+            {% for key,msg in msgs %}
+                {{ key~msg }}<br/>
+            {% endfor %}
+        </div>
+    </fieldset>
+    <div class="add-game-number-section">
+        <form method="get" action="" clas="page-section-refresh">
+            <label>Please add number of games</label>
+            <input type="text" id="gameNumber" name="gameNumber"/>
+            <button type="submit">Play Again</button>
+        </form>
     </div>
 {% endblock %}
