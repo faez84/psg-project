@@ -14,7 +14,7 @@ class Game
     public $result = [0, 0 ,0];
     public function __construct(int $totalGameNumber = 0)
     {
-        if ($totalGameNumber > 0 )
+        if ($totalGameNumber > 0 && $totalGameNumber < 1000 )
         {
             $this->totalGameNumber = $totalGameNumber;
         }
