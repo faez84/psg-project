@@ -13,7 +13,7 @@ class testGame extends TestCase
 
     public function setUp()
     {
-        $this->game = new Game();
+        $this->game = new Game(10);
     }
     public function testGetChoice()
     {
