@@ -1,22 +1,17 @@
 version: '3'
+
 services:
-    psrprojapache:
-        build: .docker/apache
-        container_name: psrproj_apache
+    newspider:
+        build:
+            context: ./
+            dockerfile: .docker/Dockerfile
         ports:
-          - 8070:80
+            - "8070:80"
+
         volumes:
-          - .docker/config/vhosts:/etc/apache2/sites-enabled
-          - .:/home/wwwroot/psrproj
-        depends_on:
-          - psrprojphp
-
-    psrprojphp:
-        build: .docker/php
-        container_name: psrproj_php
-        volumes:
-          - .:/home/wwwroot/psrproj
-        ports:
-            - 3322:3306
-
-
+            - .docker/sites.conf:/etc/nginx/nginx.conf
+            - ./:/var/www/html:cached
+            - .docker/php.ini:/usr/local/etc/php/php.ini
+        environment:
+            - VIRTUAL_HOST=spider.man.com,*.spider.man.com
+            - VIRTUAL_PORT=80
