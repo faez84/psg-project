@@ -19,7 +19,10 @@ An example result would look like this:
 Setup
 -------
 **Step 1:** Start nginx, PHP with the command line
-`docker-compose up -d`
+`
+docker-compose up -d
+`
+
 **Step 2:** Let Composer builds the applications
 ```
 docker-compose exec newspider sh
